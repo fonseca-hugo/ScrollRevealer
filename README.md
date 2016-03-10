@@ -6,7 +6,7 @@ ScrollRevealer is a light plugin that reveals elements on the page as you scroll
 Dependencies
 ========
 
-FluidLayout depends on [jQuery](http://jquery.com).
+ScrollRevealer depends on [jQuery](http://jquery.com).
 
 Features
 ========
