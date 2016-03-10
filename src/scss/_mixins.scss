@@ -1,0 +1,67 @@
+/*********************
+ANIMATION NAME
+*********************/
+/* USAGE: @include animation-name(name); */
+@mixin animation-name($animation...) {
+  $prefixes:      ("-webkit-", "");
+  @each $prefix in $prefixes {
+    #{$prefix}animation-name: $animation;
+  }
+}
+
+/*********************
+ANIMATION DURATION
+*********************/
+/* USAGE: @include animation-duration(60s); */
+@mixin duration-duration($animation...) {
+  $prefixes:      ("-webkit-", "");
+  @each $prefix in $prefixes {
+    #{$prefix}duration: $animation;
+  }
+}
+/*********************
+ANIMATION FILL MODE
+*********************/
+/* USAGE: @include animation-fill-mode(both); */
+@mixin duration-fill-mode($animation...) {
+  $prefixes:      ("-webkit-", "");
+  @each $prefix in $prefixes {
+    #{$prefix}fill-mode: $animation;
+  }
+}
+
+/*********************
+TRANSFORM
+*********************/
+/* USAGE: @include transform(none); */
+@mixin transform($transform...) {
+  $prefixes:      ("-webkit-", "");
+  @each $prefix in $prefixes {
+    #{$prefix}transform: $transform;
+  }
+}
+
+/*********************
+KEYFRAMES
+*********************/
+
+/* USAGE: @include keyframes(bgcolor) {
+	0% {
+	background-color: #ffccf2;
+	}
+	50% {
+	background-color: #ccffcc;
+	}
+	100% {
+	background-color: #ccffff;
+	}
+} */
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}

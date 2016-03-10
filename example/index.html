@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scroll Revealer</title>
+    <style>
+
+        /* style */
+
+        html, body {
+            text-align: center;
+            border: none;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Metric", Arial, sans-serif;
+            font-size: 18px;
+            line-height: 1.42857;
+            color: #333333;
+            background-color: #ffffff;
+            min-width: 320px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1 {
+            font-size: 2em;
+            font-weight: 700;
+
+        }
+
+        header h1 {
+            color: #4975ba;
+        }
+
+        h2 {
+            margin: 0 0 1em;
+        }
+
+        section {
+            padding: 100px;
+            margin-bottom: 0;
+            border: none;
+        }
+
+        section h1 {
+            font-size: 62px;
+            line-height: 64px;
+        }
+
+        button {
+            border: 3px solid #ffffff;
+            color: #ffffff;
+            padding: 0 30px;
+            cursor: pointer;
+            line-height: 50px;
+            display: inline-block;
+            vertical-align: middle;
+            text-align: center;
+            background-color: transparent;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .clearfix:after {
+            visibility: hidden;
+            display: block;
+            font-size: 0;
+            content: " ";
+            clear: both;
+            height: 0;
+        }
+
+        .section-1 {
+            background: url(hero.jpg) center center no-repeat;
+            background-size: cover;
+            min-height: 475px;
+            color: #fff;
+        }
+
+        .section-2 {
+            background-color: cornsilk;
+        }
+
+        .section-3 {
+            background-color: ghostwhite;
+        }
+
+        .hero-subarticles {
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-justify-content: space-between;
+            -moz-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            margin-top: 60px;
+        }
+
+        .hero-subarticles .item {
+            width: 30%;
+            text-align: left;
+            -webkit-flex-shrink: 0;
+            -ms-flex-negative: 0;
+            flex-shrink: 0;
+
+        }
+
+        .hero-subarticles .item::after {
+            content: "";
+            position: absolute;
+            top: 15px;
+            right: -5%;
+            width: 1px;
+            height: 70px;
+            z-index: 0;
+            background: #ffffff;
+            opacity: 0.3;
+        }
+
+        .hero-subarticles .item:last-child::after {
+            display: none;
+        }
+
+        .hero-subarticles .item .inner {
+            width: 100%;
+            position: relative;
+        }
+
+        .subheader {
+            text-transform: uppercase;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .subheader .title {
+            color: #f07662;
+            margin: 0 5px 0 0;
+        }
+
+        .subheader .role {
+            margin: 0 0 0 5px;
+            padding: 0 0 0 10px;
+            border-left: 1px solid;
+            line-height: 12px;
+            display: inline-block;
+        }
+
+        .story {
+            font-size: 22px;
+            line-height: 24px;
+        }
+
+        .double-section {
+            display: table;
+            width: 100%;
+            position: relative;
+            padding: 0;
+        }
+
+        .highlight {
+            background-color: #f07662;
+            color: white;
+            width: 50%;
+            display: table-cell;
+            padding: 50px;
+            text-align: left;
+        }
+
+        .highlight button {
+            color: #f07662;
+            background-color: #fff;
+        }
+        button.view-all {
+            float: right;
+            border: none;
+            background-color: transparent;
+            color: #fff;
+        }
+        button.view-all::before {
+            float: right;
+            content: "\2192";
+            margin-left: 10px;
+        }
+        .highlight + .highlight {
+            background-color: cornsilk;
+            color: #f07662;
+        }
+
+        .highlight + .highlight button {
+            color: #fff;
+            background-color: #f07662;
+            border-color: #f07662;
+        }
+        .highlight + .highlight button.view-all {
+            background-color: transparent;
+            color: #f07662;
+            border-color: transparent;
+        }
+
+        .blocks-wrapper {
+            margin-top: 20px;
+        }
+        .block {
+            padding: 20px;
+            float: left;
+            width: 49%;
+            color: #fff;
+            background-color: #f07662;
+            box-sizing: border-box;
+        }
+        .block:last-child {
+            margin: 0 0 0 2%;
+        }
+        .block h2 {
+            margin-bottom: 0;
+        }
+    </style>
+    <link rel="stylesheet" href="main.min.css" type="text/css" />
+</head>
+<body>
+<header>
+    <h1>Scroll Revealer</h1>
+</header>
+<section class="section-1">
+    <h1 class="js-scroll-reveal" data-animation-delay="0.1s" data-animation-dir="up">Lorem ipsum dolor sit amet,
+        consectetur adipiscing
+    </h1>
+    <p class="js-scroll-reveal" data-animation-delay="0.25s" data-animation-dir="up">Sed ut perspiciatis unde omnis</p>
+    <br>
+    <button class="js-scroll-reveal" data-animation-delay="0.40s" data-animation-dir="up">Call to Action</button>
+    <div class="hero-subarticles">
+        <article class="js-scroll-reveal item" data-animation-delay="0.65s" data-animation-dir="up">
+            <div class="inner">
+                <div class="subheader"><span class="title">Lorem ipsum</span><span class="role">consectetur</span></div>
+                <div class="story">Sed ut perspiciatis unde omnis iste natus error</div>
+            </div>
+        </article>
+        <article class="js-scroll-reveal item" data-animation-delay="0.78s" data-animation-dir="up">
+            <div class="inner">
+                <div class="subheader"><span class="title">Lorem ipsum</span><span class="role">consectetur</span></div>
+                <div class="story">Sed ut perspiciatis unde omnis iste natus error</div>
+            </div>
+        </article>
+        <article class="js-scroll-reveal item" data-animation-delay="0.91s" data-animation-dir="up">
+            <div class="inner">
+                <div class="subheader"><span class="title">Lorem ipsum</span><span class="role">consectetur</span></div>
+                <div class="story">Sed ut perspiciatis unde omnis iste natus error</div>
+            </div>
+        </article>
+    </div>
+</section>
+<section class="section-2 double-section">
+    <div class="highlight">
+        <h2 class="js-scroll-reveal" data-animation-delay="0.15s" data-animation-dir="up">Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit</h2>
+        <p class="js-scroll-reveal" data-animation-delay="0.30s" data-animation-dir="up">Sed ut perspiciatis unde omnis
+            iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
+            illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem
+            quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+            voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
+            adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
+            voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi
+            ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse
+            quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+        <div class="cta-wrapper">
+            <button class="js-scroll-reveal" data-animation-delay="0.45s" data-animation-dir="left">Continue</button>
+            <button class="js-scroll-reveal view-all" data-animation-delay="0.50s" data-animation-dir="right">View All</button>
+        </div>
+    </div>
+    <div class="highlight">
+        <h2 class="js-scroll-reveal" data-animation-delay="0.10s" data-animation-dir="up">Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit</h2>
+        <p class="js-scroll-reveal" data-animation-delay="0.15s" data-animation-dir="up">Sed ut perspiciatis unde omnis
+            iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
+            illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem
+            quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+            voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
+            adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
+            voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi
+            ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse
+            quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+        <div class="cta-wrapper">
+            <button class="js-scroll-reveal" data-animation-delay="0.25s" data-animation-dir="left">Continue</button>
+            <button class="js-scroll-reveal view-all" data-animation-delay="0.40s" data-animation-dir="right">View All</button>
+        </div>
+    </div>
+</section>
+<section class="section-3">
+    <h1 class="js-scroll-reveal" data-animation-delay="0.1s" data-animation-dir="up">Lorem ipsum dolor sit amet</h1>
+    <div class="js-scroll-reveal" data-animation-delay="0.2s" data-animation-dir="right">
+        <h2>Sed ut perspiciatis</h2>
+    </div>
+    <div class="js-scroll-reveal" data-animation-delay="0.3s" data-animation-dir="left">
+        <h2>Quis autem vel</h2>
+    </div>
+    <div class="js-scroll-reveal" data-animation-delay="0.4s" data-animation-dir="right">
+        <h2>Neque porro quisquam</h2>
+    </div>
+    <div class="js-scroll-reveal" data-animation-delay="0.5s" data-animation-dir="left">
+        <h2>Nemo enim ipsam</h2>
+    </div>
+</section>
+<section class="section-4">
+    <h1 class="js-scroll-reveal" data-animation-delay="0.1s" data-animation-dir="up">Lorem ipsum dolor sit amet</h1>
+    <div class="blocks-wrapper clearfix">
+        <div class="js-scroll-reveal block" data-animation-delay="0.2s" data-animation-dir="right">
+            <h2>Sed ut perspiciatis</h2>
+        </div>
+        <div class="js-scroll-reveal block" data-animation-delay="0.3s" data-animation-dir="left">
+            <h2>Sed ut perspiciatis</h2>
+        </div>
+    </div>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="scrollRevealer.min.js"></script>
+<script>
+    $(document).ready(function () {
+        ScrollRevealer.init(".js-scroll-reveal");
+    });
+</script>
+</body>
+</html>

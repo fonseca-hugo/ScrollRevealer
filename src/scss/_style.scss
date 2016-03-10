@@ -1,0 +1,78 @@
+.before-animation {
+  opacity: 0;
+  visibility: hidden;
+  @include animation-name(none);
+}
+
+.animated {
+  @include animation-duration(0.6s);
+  @include animation-fill-mode(both);
+}
+
+@include keyframes(fadeIn) {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  @include animation-name(fadeIn);
+  opacity: 1;
+}
+
+@include keyframes(fadeInUp) {
+  from {
+    opacity: 0;
+    @include transform(translate(0, 20px));
+    @include transform(translate3d(0, 20px));
+  }
+  to {
+    opacity: 1;
+    @include transform(none);
+  }
+}
+
+.fade-in-up {
+  @include animation-name(fadeInUp);
+  opacity: 1;
+  @include transform(none);
+}
+
+@include keyframes(fadeInLeft) {
+  from {
+    opacity: 0;
+    @include transform(translate(20px, 0));
+    @include transform(translate3d(20px, 0));
+  }
+  to {
+    opacity: 1;
+    @include transform(none);
+  }
+}
+
+.fade-in-left {
+  @include animation-name(fadeInLeft);
+  opacity: 1;
+  @include transform(none);
+}
+
+@include keyframes(fadeInRight) {
+  from {
+    opacity: 0;
+    @include transform(translate(-20px, 0));
+    @include transform(translate3d(-20px, 0));
+  }
+  to {
+    opacity: 1;
+    @include transform(none);
+  }
+}
+
+.fade-in-right {
+  @include animation-name(fadeInRight);
+  opacity: 1;
+  @include transform(none);
+}
