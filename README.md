@@ -21,7 +21,7 @@ Default usage:
 
 <pre>
 // HTML
-<h1 class="js-scroll-reveal" data-animation-delay="0.1s" data-animation-dir="up">Lorem ipsum dolor sit amet</h1>
+&lt;h1 class="js-scroll-reveal" data-animation-delay="0.1s" data-animation-dir="up"&gt;Lorem ipsum dolor sit amet&lt;/h1&gt;
 
 //JS
 $(document).ready(function () {
